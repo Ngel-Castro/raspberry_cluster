@@ -1,0 +1,17 @@
+all:
+  children:
+    raspberry_cluster:
+      children:
+        controllers:
+          hosts:
+            10.0.0.185:
+              ansible_hosts: 10.0.0.185
+              ansible_user: cluster
+              ansible_password: "{{ cluster_password }}"
+        nodes:
+          hosts:
+            10.0.0.245:
+              ansible_hosts: 10.0.0.245
+              ansible_user: cluster
+              #ansible_ssh_private_key_file: /path/file
+              ansible_password: "{{ cluster_password }}"
