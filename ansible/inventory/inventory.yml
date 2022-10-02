@@ -1,14 +1,15 @@
+---
 all:
   children:
     raspberry_cluster:
       children:
-        controllers:
+        controller:
           hosts:
             10.0.0.185:
               ansible_hosts: 10.0.0.185
               ansible_user: cluster
               ansible_password: "{{ cluster_password }}"
-        nodes:
+        node:
           hosts:
             10.0.0.245:
               ansible_hosts: 10.0.0.245

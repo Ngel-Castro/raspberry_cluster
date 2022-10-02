@@ -17,6 +17,12 @@ ansible all -m ping -v -i ansible/inventory --extra-vars "cluster_password=$CLUS
 
 ```
 ansible raspberry_cluster -m ping -v -i ansible/inventory --extra-vars "cluster_password=$CLUSTER_PASSWORD"
-ansible controllers -m ping -v -i ansible/inventory --extra-vars "cluster_password=$CLUSTER_PASSWORD"
-ansible nodes -m ping -v -i ansible/inventory --extra-vars "cluster_password=$CLUSTER_PASSWORD"
+ansible controller -m ping -v -i ansible/inventory --extra-vars "cluster_password=$CLUSTER_PASSWORD"
+ansible node -m ping -v -i ansible/inventory --extra-vars "cluster_password=$CLUSTER_PASSWORD"
+```
+
+## Execute Playbooks
+
+```
+ansible-playbook site.yml -i ansible/inventory/raspberry_cluster/inventory.yml --extra-vars "cluster_password=$CLUSTER_PASSWORD"
 ```
