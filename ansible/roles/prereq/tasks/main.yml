@@ -1,4 +1,6 @@
 ---
+- debug: var=inventory_hostname
+
 - name: Set SELinux to disabled state
   selinux:
     state: disabled

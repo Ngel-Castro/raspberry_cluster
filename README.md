@@ -40,7 +40,12 @@ currently trying to solve issue with k3s nodes
 ```
 Oct 02 15:55:36 raspberrypi k3s[13542]: time="2022-10-02T15:55:36-04:00" level=error msg="unable to verify hash for node 'raspberrypi': hash does not match"
 Oct 02 15:55:41 raspberrypi k3s[13542]: time="2022-10-02T15:55:41-04:00" level=error msg="unable to verify hash for node 'raspberrypi': hash does not match"
-^C
+
+```
 
 
+## Reset cluster
+
+```
+ansible-playbook reset.yml -i ansible/inventory/raspberry_cluster/inventory.yml --extra-vars "cluster_password=$CLUSTER_PASSWORD"
 ```
