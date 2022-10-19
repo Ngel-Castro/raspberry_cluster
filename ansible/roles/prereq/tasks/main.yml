@@ -55,6 +55,12 @@
     validate: 'visudo -cf %s'
   when: ansible_distribution in ['CentOS', 'Red Hat Enterprise Linux']
 
+- name: Rolling update
+  apt:
+    update_cache: true
+    cache_valid_time: 3600
+    force_apt_get: true
+
 - name: Set hostname for cluster participants
   hostname:
     name: "{{ inventory_hostname }}"

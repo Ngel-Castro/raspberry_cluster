@@ -49,3 +49,17 @@ Oct 02 15:55:41 raspberrypi k3s[13542]: time="2022-10-02T15:55:41-04:00" level=e
 ```
 ansible-playbook reset.yml -i ansible/inventory/raspberry_cluster/inventory.yml --extra-vars "cluster_password=$CLUSTER_PASSWORD"
 ```
+
+
+## Install ArgoCD
+
+```
+kubectl create namespace argocd
+kubectl apply -f argocd/manifests/install.yaml
+```
+
+## Install metalLB
+
+```
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
+```

@@ -77,3 +77,9 @@
     src: /usr/local/bin/k3s
     dest: /usr/local/bin/crictl
     state: link
+
+- name: Install ansible in controller
+  apt:
+    name: ansible
+    state: present
+    update_cache: yes
